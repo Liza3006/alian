@@ -405,9 +405,7 @@ def final_screen():
 
     with open('records.txt') as f:
         k = f.readlines()
-        print(k)
     s = k[0].split('/n')[-2].split('---')
-    print(s)
     text_4 = font_2.render(f"Previouse result: {s[0]} p; {s[1]} s", True, [83, 55, 122])
     with open('records.txt', 'w') as f:
         f.write(f'{"/n".join(k)}{points}---{time}/n')
@@ -452,7 +450,6 @@ def game():
     global lvl
     global time
     pygame.display.set_caption('Fly burger')
-    print(lvl)
     screen = pygame.display.set_mode((WIDTH, HEIGHT), 0, 100)
     counter = 0
     timer_event = pygame.USEREVENT + 1
@@ -530,7 +527,6 @@ def game():
                 run = False
             elif event.type == timer_event:
                 counter += 1
-                print
             pygame.event.pump()
         player.update(boxes, coins)
 
